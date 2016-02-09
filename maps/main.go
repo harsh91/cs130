@@ -20,7 +20,8 @@ func main() {
 	delete(scoreMap, "Mukasir")
 	fmt.Println("After deleting map looks like")
 	fmt.Println(scoreMap)
-
+	fmt.Println("Modfying the existing value")
+	scoreMap["Harsh"] = "99"
 	for keys, values := range scoreMap {
 		fmt.Println(keys + ": " + values)
 	}
