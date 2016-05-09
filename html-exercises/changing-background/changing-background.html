@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Changing Background</title>
+    <style>
+        .random-text {
+            position: absolute;
+            top: 200px;
+            left: 40px;
+            width: 100%;
+            font-weight: 100;
+            color: #ffffff;
+        }
+        #background {
+            width: 100%
+            height: 100%
+        }
+        .image {
+            position: relative;
+            width: 100%; /* for IE 6 */
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script>
+        var imgs = ["background2.jpg", "background1.png"];
+        var counter = 0;
+        $(document).ready(function() {
+            setTimeout(changebackground, 4000);
+        });
+        function changebackground() {
+            counter++;
+            if (counter > 1) counter = 0;
+            $("#background").attr("src", imgs[counter]);
+            setTimeout(changebackground, 4000);
+        }
+    </script>
+</head>
+<body>
+    <div class="image">
+        <img id="background" src="background1.png"/>
+        <label id="random-text" class="random-text">Some Text Comes On The Top !!</label>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unordered List  using JS</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#ulist').append("<ul id='newlist'></ul>");
+            var fields = ["Name", "Age", "Gender", "Email"];
+            for(var i = 0 ; i < fields.length ; i++){
+                $("#newlist").append("<li class='fields'>"+ fields[i] +"</li>");
+            }
+            $('body').on('click', '.fields', function() {
+                alert($(this).html());
+            });
+        });
+    </script>
+</head>
+<body>
+<label id="ulist" class="ulist">Unordered list</label>
+</body>
+</html>
